@@ -425,8 +425,6 @@ class OrderByBackend(BaseFilterBackend):
 
     def get_default_ordering(self, view):
         ordering = getattr(view, 'ordering', None)
-        if ordering is None:
-            return ('id',)
         if isinstance(ordering, str):
             return (ordering,)
         return ordering
